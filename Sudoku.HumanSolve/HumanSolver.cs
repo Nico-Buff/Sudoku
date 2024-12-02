@@ -3,21 +3,21 @@ using Sudoku.SolverTechniques;
 
 namespace Sudoku.HumanSolving
 {
-    public partial class Solver : ISudokuSolver
+    public partial class HumanSolver : ISudokuSolver
     {
         private static readonly string[] TupleStr = new string[5] { string.Empty, "single", "pair", "triple", "quadruple" };
         private readonly Func<SudokuGrid, bool>[] _techniques;
         private SudokuGrid _grid; // Instance de la grille de Sudoku
 
         // Constructeur sans paramètre pour le benchmark
-        public Solver() 
+        public HumanSolver() 
         {
             _grid = new SudokuGrid(); 
             _techniques = InitSolverTechniques();
         }
 
         // Constructeur avec paramètre
-        public Solver(SudokuGrid grid)
+        public HumanSolver(SudokuGrid grid)
         {
             _grid = grid;
             _techniques = InitSolverTechniques();
